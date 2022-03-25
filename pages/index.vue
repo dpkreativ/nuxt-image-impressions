@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import Observer from 'vue-intersection-observer'
+
 export default {
   name: 'IndexPage',
   data() {
@@ -46,6 +48,17 @@ export default {
         },
       ],
     }
+  },
+  components: {
+    Observer,
+  },
+  methods: {
+    onChange(entry) {
+      if (entry.isIntersecting) {
+        this.count = this.count + 1
+        localStorage.setItem('Impressions', this.count)
+      }
+    },
   },
 }
 </script>
