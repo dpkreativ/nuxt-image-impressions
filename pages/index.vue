@@ -1,5 +1,25 @@
 <template>
-  <Tutorial />
+  <div>
+    <nav class="sticky top-0 bg-white font-bold text-2xl p-5 shadow">
+      <h1>Impressions: {{ count }}</h1>
+    </nav>
+    <div class="w-full max-w-4xl p-5 mx-auto">
+      <div
+        v-for="(poem, idx) in poems"
+        :key="idx"
+        class="grid lg:grid-cols-12 gap-4 min-h-screen content-center"
+      >
+        <div class="lg:col-span-7">
+          <div>
+            <img :src="poem.imageUrl" :alt="poem.imageAlt" class="w-full" />
+          </div>
+        </div>
+        <div class="lg:col-span-5">
+          <p class="text-xl">{{ poem.text }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
