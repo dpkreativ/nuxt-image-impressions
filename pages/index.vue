@@ -56,7 +56,6 @@ export default {
     onChange(entry) {
       if (entry.isIntersecting) {
         this.count = this.count + 1
-        localStorage.setItem('Impressions', this.count)
       }
     },
   },
