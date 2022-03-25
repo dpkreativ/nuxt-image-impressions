@@ -10,9 +10,9 @@
         class="grid lg:grid-cols-12 gap-4 min-h-screen content-center"
       >
         <div class="lg:col-span-7">
-          <div>
+          <observer @on-change="onChange">
             <img :src="poem.imageUrl" :alt="poem.imageAlt" class="w-full" />
-          </div>
+          </observer>
         </div>
         <div class="lg:col-span-5">
           <p class="text-xl">{{ poem.text }}</p>
